@@ -1,18 +1,18 @@
 var express = require('express');
 var data  = require('./data/test.json');
 
-/*
-imort data from './data/test.json';
-
-*/
-
 var app = express();
 const PORT = 3000;
 
 //we can now serve up static pages
-app.use(express.static(__dirname));
+//app.use(express.static(__dirname));
 
-//app.listen(3000);
+//this is how a route is built in express
+app.get('/', (req,res)=>{
+  res.send(`App is running on port ${PORT}`);
+
+});
+
 
 app.listen(PORT,()=>{
   console.log(`App is running on port ${PORT}`);
